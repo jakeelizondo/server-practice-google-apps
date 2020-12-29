@@ -27,7 +27,9 @@ app.get('/apps', (req, res) => {
     return res.status(400).send('Filter must be an accepted Genre');
   }
 
-  results = results.filter((app) => app.Genres.includes(genre));
+  if (genre) {
+    results = results.filter((app) => app.Genres.includes(genre));
+  }
 
   if (sort) {
     results.sort((curr, next) => {
