@@ -15,7 +15,7 @@ const acceptedGenres = [
   'Card',
 ];
 
-app.get('/', (req, res) => {
+app.get('/apps', (req, res) => {
   const { sort, genre } = req.query;
   let results = googleData;
 
